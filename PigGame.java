@@ -1,5 +1,5 @@
 /**
- * @author Alyana Soriano
+ * @author Alyana Soriano, Winona Una Gamba, Cameron Jay Carpo, Julian Mark Labo
  */
 import java.util.*;
 
