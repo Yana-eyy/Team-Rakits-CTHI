@@ -47,7 +47,9 @@ public class PigGame {
                playerScores = 0;
                System.out.print("You lose your turn! ");
                System.out.println("Your total is " + playerTotal);
-               turnOver = true;}
+               turnOver = true;
+               
+            }
                else
             {
              playerScores += dice;
