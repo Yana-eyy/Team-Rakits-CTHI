@@ -1,69 +1,105 @@
-/**
- * @author Alyana Soriano, Winona Una Gamba, Cameron Jay Carpo, Julian Mark Labo
- */
-import java.util.*;
-
-public class PigGame { 
-    
-    private static int playerScores = 0;
-    private static int playerTotal = 0;
-    private static int computerScores = 0;
-    private static int computerTotal = 0;
-    private static int dice;
-    private static boolean gameOver = false;
-    private static boolean turnOver = false;
-    private static char repeat = (0);
-    private static String input;   
-    private static Scanner keyboard  = new Scanner(System.in);
+import java.util.Scanner;
+import java.util.Random;
+ 
+public class game
+{
+   public static void main(String[] args)
+   {
+      int playerScores = 0;
+      int playerTotal = 0;
+      int computerScores = 0;
+      int computerTotal = 0;
+      int dice;
+      boolean gameOver = false;
+      boolean turnOver = false;
+      char repeat;
+      String input;   
+      Scanner keyboard  = new Scanner(System.in);
        
-    private static Random rand = new Random();
-  public static void main(String[] args) {
-
-    System.out.println("Hello! Wellcome to pig game!");
-    PlayerChoice();
-  }
-
-    public static void PlayerChoice(){
-
+      Random rand = new Random();
+        
+      System.out.println("Welcome to the game of Pig!\n");
+       
       while (gameOver == false)
       {    
          do
          {
-            //
-            while (true){
-            System.out.println("Do you want to play? (Y/N)");
-            input = keyboard.nextLine();
-            repeat = input.charAt(0);
-            if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-                break;
-            }
-        }   
-            System.out.println("Let's play!");
-
-          dice = rand.nextInt(6) + 1;
-          System.out.println("You rolled: " + dice);
-           if (dice == 1)
+            dice = rand.nextInt(6) + 1;
+            System.out.println("You rolled: " + dice);
+            if (dice == 1)
             {
                playerScores = 0;
                System.out.print("You lose your turn! ");
                System.out.println("Your total is " + playerTotal);
                turnOver = true;
-               
+               while(playerTotal < 100);
             }
-               else
+            else
             {
-             playerScores += dice;
-             while (true){
-                System.out.println("Keep going? (Y/N)");
-                input = keyboard.nextLine();
-                repeat = input.charAt(0);
-                if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-                    break;
-                }
-            }   
-            }                                
-        }
-            while(playerTotal <= 100);  
-        }
-    }
-}
+               playerScores += dice;
+               System.out.print("Your turn score is " +
+                                playerScores);
+               System.out.println(" If you hold you will have " +
+                                  playerScores + " points.");
+               System.out.println("Enter 'r' to roll " +
+                                  "again, 'h' to hold.");
+               input = keyboard.nextLine();
+               repeat = input.charAt(0);
+  
+               if (repeat == 'h')
+                
+                  break;                               
+            }
+         } while(turnOver == false || dice != 1);
+            playerTotal += playerScores;
+            System.out.println("Your score is " +
+                               playerTotal);   
+            playerScores = 0;
+         if (playerTotal >= 100)
+         {
+            System.out.println("YOU WIN!");
+            gameOver = true;
+            while(playerTotal >= 100);
+         } 
+          
+         System.out.println();
+         System.out.println("It is the computer's turn.");
+         do
+         {
+            dice = rand.nextInt(6) + 1;
+            System.out.println("The computer rolled: " +
+                               dice);
+            if(dice == 1)
+            {
+               computerScores = 0;
+               System.out.print("The computer lost its turn!");
+               System.out.print(" Computer total is " + 
+                                computerTotal);
+               turnOver = true;
+               while(computerTotal < 100);
+            }
+            else
+            {
+               computerScores += dice;
+               if(computerScores >= 20 || (computerTotal +
+                  computerScores) >= 100)
+                  System.out.println("The computer holds");
+                  turnOver = true;
+            }
+         } while (dice != 1 || computerScores < 20);
+             
+            computerTotal += computerScores;
+            System.out.println("The computer's score is " +
+                               computerTotal + "\n");
+            computerScores = 0;
+         if (computerTotal >= 100)
+         {
+            System.out.println("THE COMPUTER WINS!");
+            gameOver = true;
+            while (computerTotal >= 100);
+         }
+         if(keyboard!=null)
+         keyboard.close();
+          
+   }
+ }
