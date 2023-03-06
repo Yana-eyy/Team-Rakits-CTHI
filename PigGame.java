@@ -7,7 +7,7 @@ public class PigGame {
     public static void main (String []args){
      String Y;
      String N;
-     String playerchoice;
+     String playerchoice = "";
      System.out.println(playerchoice.equalsIgnoreCase("Y"));
 
     }
