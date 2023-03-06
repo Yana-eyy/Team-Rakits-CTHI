@@ -3,14 +3,10 @@
  */
 import java.util.*;
 public class PigGame {
+    static Scanner pog = new Scanner (System.in);
     private static int a;
     public static void main (String []args){
-        int tab;
-        Scanner pog = new Scanner (System.in);
-        System.out.println("Insert ");
-        tab = pog.nextInt();
-        System.out.println(tab);
-        System.out.println("Hello! Welcome to the pig game!");
+        System.out.println("Hello! Welcome to the Pig Game!");
     }
 
 }
