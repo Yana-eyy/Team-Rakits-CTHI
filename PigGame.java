@@ -27,5 +27,17 @@ public class PigGame {
          {
           dice = rand.nextInt(6) + 1;
           System.out.println("You rolled: " + dice);
+           dice = rand.nextInt(6) + 1;
+          System.out.println("You rolled: " + dice);
+           if (dice == 1)
+            {
+               playerScores = 0;
+               System.out.print("You lose your turn! ");
+               System.out.println("Your total is " + playerTotal);
+               turnOver = true;
+               while(playerTotal < 100);
+            }
+            else
+            {
   }
 }
