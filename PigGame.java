@@ -35,9 +35,23 @@ public class PigGame {
                System.out.print("You lose your turn! ");
                System.out.println("Your total is " + playerTotal);
                turnOver = true;
-               
+               while(playerTotal < 100){
             }
             else
             {
-  }while(playerTotal < 100){
+             playerScores += dice;
+               System.out.print("Your turn score is " +
+                                playerScores);
+               System.out.println(" If you hold you will have " +
+                                  playerScores + " points.");
+               System.out.println("Enter 'r' to roll " +
+                                  "again, 'h' to hold.");
+               input = keyboard.nextLine();
+               repeat = input.charAt(0);
+  
+               if (repeat == 'h')
+                
+                  break;                               
+            }
+  }
 }
