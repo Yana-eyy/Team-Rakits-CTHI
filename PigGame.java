@@ -50,7 +50,7 @@ public class PigGame {
                 
                   break;                               
         }
-            while(playerTotal < 100);}
+            while(playerTotal <= 100);}
             
   }
 }
