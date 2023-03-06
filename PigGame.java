@@ -25,6 +25,7 @@ public class PigGame {
       {    
          do
          {
+            //
             while (true){
             System.out.println("Do you want to play? (Y/N)");
             input = keyboard.nextLine();
@@ -32,7 +33,8 @@ public class PigGame {
             if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
                 break;
             }
-        }
+        }   
+            System.out.println("Let's play!");
 
           dice = rand.nextInt(6) + 1;
           System.out.println("You rolled: " + dice);
@@ -48,18 +50,18 @@ public class PigGame {
                System.out.print("Your turn score is " + playerScores);
                System.out.println(" If you hold you will have " + playerScores + " points.");
                while (true){
-                System.out.println("Enter 'Y' to roll " + "again, 'N' to hold.");
+                System.out.println("Do you want to play? (Y/N)");
                 input = keyboard.nextLine();
                 repeat = input.charAt(0);
                 if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-                    break;
+                    
                 }
-
+                else if (repeat == 'N')
+                System.out.println("Turn ended. You earned " + playerScores + " points");
+                  break; 
             }
         
-               if (repeat == 'N')
-                System.out.println("Turn ended. You earned " + playerScores + " points");
-                  break;                               
+                                             
         }}
             while(playerTotal <= 100);
             
