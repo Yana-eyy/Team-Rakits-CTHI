@@ -54,12 +54,9 @@ public class PigGame {
                System.out.print("Your turn score is " + playerScores);
                System.out.println(" If you hold you will have " + playerScores + " points.");
                
-            }
-        
-                                             
+            }                                
         }
-            while(playerTotal <= 100);
-            
-  }}
-
+            while(playerTotal <= 100);  
+        }
+    }
 }
