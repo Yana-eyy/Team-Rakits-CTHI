@@ -49,7 +49,7 @@ public class PigGame {
              playerScores += dice;
               
                while (true){
-                System.out.println("Enter 'Y' to roll " + "again, 'N' to hold.");
+                System.out.println("Keep going? (Y/N)");
                 input = keyboard.nextLine();
                 repeat = input.charAt(0);
                 if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
