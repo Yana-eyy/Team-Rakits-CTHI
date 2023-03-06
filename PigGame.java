@@ -51,9 +51,14 @@ public class PigGame {
                else
             {
              playerScores += dice;
-               System.out.print("Your turn score is " + playerScores);
-               System.out.println(" If you hold you will have " + playerScores + " points.");
-               
+             while (true){
+                System.out.println("Keep going? (Y/N)");
+                input = keyboard.nextLine();
+                repeat = input.charAt(0);
+                if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
+                    break;
+                }
+            }   
             }                                
         }
             while(playerTotal <= 100);  
