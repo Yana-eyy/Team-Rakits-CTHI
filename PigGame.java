@@ -35,9 +35,9 @@ public class PigGame {
                System.out.print("You lose your turn! ");
                System.out.println("Your total is " + playerTotal);
                turnOver = true;
-               while(playerTotal < 100);
+               
             }
             else
             {
-  }
+  }while(playerTotal < 100){
 }
