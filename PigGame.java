@@ -10,7 +10,7 @@ public class PigGame {
         System.out.println("Insert ");
         tab = pog.nextInt();
         System.out.println(tab);
-
+System.out.println("hatdog");
 
 
     }
