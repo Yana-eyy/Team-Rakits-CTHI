@@ -21,8 +21,9 @@ public class PigGame {
 
     System.out.println("Hello! Wellcome to pig game!");
     PlayerChoice();
+  }
 
-    public static void PlayerChoice();{
+    public static void PlayerChoice(){
 
       while (gameOver == false)
       {    
@@ -52,23 +53,13 @@ public class PigGame {
              playerScores += dice;
                System.out.print("Your turn score is " + playerScores);
                System.out.println(" If you hold you will have " + playerScores + " points.");
-               while (true){
-                System.out.println("Do you want to play? (Y/N)");
-                input = keyboard.nextLine();
-                repeat = input.charAt(0);
-                if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-                    
-                }
-                else if (repeat == 'N')
-                System.out.println("Turn ended. You earned " + playerScores + " points");
-                  break; 
+               
             }
         
                                              
-        }}
+        }
             while(playerTotal <= 100);
             
   }}
+
 }
-private static void PlayerChoice() {
-}}
