@@ -26,7 +26,7 @@ public class PigGame {
          do
          {
             while (true){
-            System.out.println("Do you want to play? (Y/N)");
+            System.out.println("keep going? (Y/N)");
             input = keyboard.nextLine();
             repeat = input.charAt(0);
             if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
