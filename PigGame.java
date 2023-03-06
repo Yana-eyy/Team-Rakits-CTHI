@@ -13,7 +13,7 @@ public class PigGame {
       int dice;
       boolean gameOver = false;
       boolean turnOver = false;
-      String repeat = "";
+      char repeat = (0);
       String input;   
       Scanner keyboard  = new Scanner(System.in);
        
@@ -26,8 +26,6 @@ public class PigGame {
          do
          {
           dice = rand.nextInt(6) + 1;
-          System.out.println("You rolled: " + dice);
-           dice = rand.nextInt(6) + 1;
           System.out.println("You rolled: " + dice);
            if (dice == 1)
             {
@@ -45,10 +43,10 @@ public class PigGame {
                System.out.println("Enter 'r' to roll " +
                                   "again, 'h' to hold.");
                input = keyboard.nextLine();
-               repeat = keyboard.nextLine();
+               repeat = input.charAt(0);
             }
         
-               if (repeat.equalsIgnoreCase("h"))
+               if (repeat == 'h')
                 
                   break;                               
         }
