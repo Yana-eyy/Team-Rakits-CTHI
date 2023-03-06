@@ -3,7 +3,7 @@
  */
 import java.util.*;
 
-public class Main {
+public class PigGame {
   public static void main(String[] args) {
 
       int playerScores = 0;
