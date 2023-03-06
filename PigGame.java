@@ -19,9 +19,10 @@ public class PigGame {
     private static Random rand = new Random();
   public static void main(String[] args) {
 
-     
-    
     System.out.println("Hello! Wellcome to pig game!");
+    PlayerChoice();
+
+    public static void PlayerChoice();{
 
       while (gameOver == false)
       {    
@@ -67,5 +68,7 @@ public class PigGame {
         }}
             while(playerTotal <= 100);
             
-  }
+  }}
+}
+private static void PlayerChoice() {
 }}
