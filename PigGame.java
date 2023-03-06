@@ -3,21 +3,23 @@
  */
 import java.util.*;
 
-public class PigGame {
+public class PigGame { 
+    
+    private static int playerScores = 0;
+    private static int playerTotal = 0;
+    private static int computerScores = 0;
+    private static int computerTotal = 0;
+    private static int dice;
+    private static boolean gameOver = false;
+    private static boolean turnOver = false;
+    private static char repeat = (0);
+    private static String input;   
+    private static Scanner keyboard  = new Scanner(System.in);
+       
+    private static Random rand = new Random();
   public static void main(String[] args) {
 
-      int playerScores = 0;
-      int playerTotal = 0;
-      int computerScores = 0;
-      int computerTotal = 0;
-      int dice;
-      boolean gameOver = false;
-      boolean turnOver = false;
-      char repeat = (0);
-      String input;   
-      Scanner keyboard  = new Scanner(System.in);
-       
-      Random rand = new Random();
+     
     
     System.out.println("Hello! Wellcome to pig game!");
 
