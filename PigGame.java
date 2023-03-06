@@ -13,7 +13,7 @@ public class PigGame {
       int dice;
       boolean gameOver = false;
       boolean turnOver = false;
-      char repeat;
+      String repeat = "";
       String input;   
       Scanner keyboard  = new Scanner(System.in);
        
@@ -34,10 +34,8 @@ public class PigGame {
                playerScores = 0;
                System.out.print("You lose your turn! ");
                System.out.println("Your total is " + playerTotal);
-               turnOver = true;
-               while(playerTotal < 100){
-            }
-            else
+               turnOver = true;}
+               else
             {
              playerScores += dice;
                System.out.print("Your turn score is " +
@@ -47,11 +45,14 @@ public class PigGame {
                System.out.println("Enter 'r' to roll " +
                                   "again, 'h' to hold.");
                input = keyboard.nextLine();
-               repeat = input.charAt(0);
-  
-               if (repeat == 'h')
+               repeat = keyboard.nextLine();
+            }
+        
+               if (repeat.equalsIgnoreCase("h"))
                 
                   break;                               
-            }
+        }
+            while(playerTotal < 100);}
+            
   }
 }
