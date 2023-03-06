@@ -58,7 +58,7 @@ public class PigGame {
             }
         
                if (repeat == 'N')
-                
+                System.out.println("Turn ended. You earned " + playerScores + " points");
                   break;                               
         }}
             while(playerTotal <= 100);
