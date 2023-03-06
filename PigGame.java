@@ -3,66 +3,63 @@
  */
 import java.util.*;
 
-public class PigGame {
+public class PigGame { 
+    
+    private static int playerScores = 0;
+    private static int playerTotal = 0;
+    private static int computerScores = 0;
+    private static int computerTotal = 0;
+    private static int dice;
+    private static boolean gameOver = false;
+    private static boolean turnOver = false;
+    private static char repeat = (0);
+    private static String input;   
+    private static Scanner keyboard  = new Scanner(System.in);
+       
+    private static Random rand = new Random();
   public static void main(String[] args) {
 
-      int playerScores = 0;
-      int playerTotal = 0;
-      int computerScores = 0;
-      int computerTotal = 0;
-      int dice;
-      boolean gameOver = false;
-      boolean turnOver = false;
-      char repeat = (0);
-      String input;   
-      Scanner keyboard  = new Scanner(System.in);
-       
-      Random rand = new Random();
-    
     System.out.println("Hello! Wellcome to pig game!");
+    PlayerChoice();
+  }
+
+    public static void PlayerChoice(){
 
       while (gameOver == false)
       {    
          do
          {
+            //
             while (true){
-            System.out.println("keep going? (Y/N)");
+            System.out.println("Do you want to play? (Y/N)");
             input = keyboard.nextLine();
             repeat = input.charAt(0);
             if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-              System.out.println();
-              System.out.println("-----YOUR TURN-----");
                 break;
             }
-        }
+        }   
+            System.out.println("Let's play!");
 
           dice = rand.nextInt(6) + 1;
-          System.out.println("The dice rolled a " + dice);
+          System.out.println("You rolled: " + dice);
            if (dice == 1)
             {
                playerScores = 0;
-               System.out.print("Turn ended. ");
-               System.out.println("You earned " + playerTotal + (" points");
+               System.out.print("You lose your turn! ");
+               System.out.println("Your total is " + playerTotal);
                turnOver = true;}
                else
             {
              playerScores += dice;
-              
-               while (true){
-                System.out.println("Keep going? (Y/N)");
-                input = keyboard.nextLine();
-                repeat = input.charAt(0);
-                if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")){
-                    break;
-                }
-
+               System.out.print("Your turn score is " + playerScores);
+               System.out.println(" If you hold you will have " + playerScores + " points.");
+               
             }
         
-               if (repeat == 'N')
-                System.out.println("Turn ended. You earned " + playerScores + " points");
-                  break;                               
-        }}
+                                             
+        }
             while(playerTotal <= 100);
             
-  }
-}}
+  }}
+
+}
