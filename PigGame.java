@@ -5,14 +5,10 @@ import java.util.*;
 public class PigGame {
     
     public static void main (String []args){
-        int tab;
-        Scanner pog = new Scanner (System.in);
-        System.out.println("Insert ");
-        tab = pog.nextInt();
-        System.out.println(tab);
-System.out.println("hatdog");
-//aughguys  iniwan niya aq na
-
+     String Y;
+     String N;
+     String playerchoice;
+     System.out.println(playerchoice.equalsIgnoreCase("Y"));
 
     }
 
