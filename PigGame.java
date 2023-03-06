@@ -10,10 +10,11 @@ public class PigGame {
         System.out.println("Insert ");
         tab = pog.nextInt();
         System.out.println(tab);
+
         System.out.println("hatdog");
         //augh
-
-
+System.out.println("hatdog");
+//aughguys  iniwan niya aq na
 
 
     }
