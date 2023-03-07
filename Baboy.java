@@ -23,58 +23,78 @@ public class Baboy {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("Hello! Welcome to the Pig Game!"); 
+        System.out.println("Hello! Welcome to the Pig Game!");
+        NewGame();
         GamePlay();
+    }
+
+    private static void NewGame() throws InterruptedException {
+        System.out.println("Do you want to start a new game? (Y/N)");
+        input = pog.nextLine();
+        resetGamePlayer();
+        resetGameComp();
+        if (input.equalsIgnoreCase("Y")) {
+            GamePlay();
+        } else {
+            System.exit(0);
+        }
+
     }
 
     public static void GamePlay() throws InterruptedException {
         PlayerTurn();
     }
-// PLAYER
-    public static void PlayerTurn() throws InterruptedException { 
-        System.out.println("Do you want to start a new game? (Y/N)");
-            input = pog.nextLine();
+
+    public static void PlayerTurn() throws InterruptedException {
         while (true) {
-           
 
-            resetGamePlayer();
-            resetGameComp();
-
-            if (input.equalsIgnoreCase("Y")) {
-                System.out.println("------YOUR TURN-----");
-                do {
-
-                    dice = ran.nextInt(6) + 1;
-                    System.out.println("The die rolled: " + dice);
-                    if (dice == 1) {
-                        resetGamePlayer();
-                        System.out.println("Turn ended. You earned " + playerTotal + " points.");
-                        CompTurn();
+            System.out.println("------YOUR TURN-----");
+            do {
+                dice = ran.nextInt(6) + 1;
+                System.out.println("The die rolled: " + dice);
+                if (dice == 1) {
+                    resetGamePlayer();
+                    System.out.println("Turn ended. You earned " + playerTotal + " points.");
+                    CompTurn();
+                    break;
+                }
+                System.out.println("Keep going? (Y/N)");
+                input = pog.nextLine();
+                if (input.equalsIgnoreCase("Y")) {
+                    playerTotal = playerScores += dice;
+                    if (playerTotal >= 30) {
+                        System.out.println("You won!");
+                        NewGame();
                         break;
                     }
-            
-                    System.out.println("Keep going? (Y/N)");
-                    input = pog.nextLine();
-
-                    if (input.equalsIgnoreCase("Y")) {
-                        playerTotal = playerScores += dice;
-                        if (playerTotal >= 30)
-                            System.out.println("You won!");
-                    } else if (input.equalsIgnoreCase("N")) {
-                        playerTotal = playerScores += dice;
-                        System.out.println("Turn ended. You earned " + playerTotal + " points.");
-                        CompTurn();
-                        if (playerTotal >= 30)
-                            System.out.println("You won!");
+                } else if (input.equalsIgnoreCase("N")) {
+                    playerTotal = playerScores += dice;
+                    System.out.println("Turn ended. You earned " + playerTotal + " points.");
+                    if (playerTotal >= 30) {
+                        System.out.println("You won!");
+                        NewGame();
                         break;
                     } else {
-                        System.out.println("You have entered the wrong input, please try again.");
+                        CompTurn();
+                        break;
                     }
-                } while (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N"));
-            } else if (input.equalsIgnoreCase("N")) {
+
+                } else {
+                    System.out.println("You have entered the wrong input, please try again.");
+                }
+            } while (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N"));
+
+            if (input.equalsIgnoreCase("N")) {
                 System.out.println("Turn ended. You earned " + playerTotal + " points.");
-                CompTurn();
-                break;
+                if (playerTotal >= 30) {
+                    System.out.println("You won!");
+                    NewGame();
+                    break;
+                } else {
+                    CompTurn();
+                    break;
+                }
+
             } else {
                 System.out.println("You have entered the wrong input, please try again.");
             }
@@ -90,7 +110,7 @@ public class Baboy {
         CompTotal = 0;
         CompScores = 0;
     }
-//COMPUTER
+
     private static void CompTurn() throws InterruptedException {
         String[] yesno = { "Y", "N" };
         ComputerMove = yesno[new Random().nextInt(yesno.length)];
@@ -102,7 +122,7 @@ public class Baboy {
             System.out.println("The die rolled: " + dice);
             if (dice == 1) {
                 resetGameComp();
-                System.out.println("Turn ended. You earned " + CompTotal + " points.");
+                System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
                 PlayerTurn();
                 break;
             }
@@ -111,14 +131,24 @@ public class Baboy {
             System.out.println(ComputerMove);
             if (ComputerMove.equalsIgnoreCase("Y")) {
                 CompTotal = CompScores += dice;
-                if (CompTotal >= 30)
+                if (CompTotal >= 30) {
                     System.out.println("Computer won!");
+                    NewGame();
+                    break;
+                }
             } else if (ComputerMove.equalsIgnoreCase("N")) {
                 CompTotal = CompScores += dice;
                 System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
-                PlayerTurn();
-                if (CompTotal >= 30)
+                if (CompTotal >= 30) {
                     System.out.println("Computer won!");
+                    NewGame();
+                    break;
+                }
+                PlayerTurn();
+                break;
+            }
+            if (CompTotal >= 30) {
+                System.out.println("Computer won!");
                 break;
             }
         } while (ComputerMove.equalsIgnoreCase("Y"));
