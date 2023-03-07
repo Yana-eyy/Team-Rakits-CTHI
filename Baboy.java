@@ -117,7 +117,7 @@ public class Baboy {
                 System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
                 PlayerTurn();
                 if (CompTotal >= 30)
-                    System.out.println("Computer won!");
+                    System.out.println("Computer woon!");
                 break;
             }
         } while (ComputerMove.equalsIgnoreCase("Y"));
