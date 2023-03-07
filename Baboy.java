@@ -23,7 +23,9 @@ public class Baboy {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("Hello! Welcome to the Pig Game!");
+        System.out.println("Hello! Welcome to the Pig Game!"); 
+        System.out.println("Do you want to start a new game? (Y/N)");
+            input = pog.nextLine();
         GamePlay();
     }
 
@@ -33,8 +35,7 @@ public class Baboy {
 // PLAYER
     public static void PlayerTurn() throws InterruptedException {
         while (true) {
-            System.out.println("Do you want to start a new game? (Y/N)");
-            input = pog.nextLine();
+           
 
             resetGamePlayer();
             resetGameComp();
