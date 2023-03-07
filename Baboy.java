@@ -30,7 +30,7 @@ public class Baboy {
     public static void GamePlay() throws InterruptedException {
         PlayerTurn();
     }
-
+// PLAYER
     public static void PlayerTurn() throws InterruptedException {
         while (true) {
             System.out.println("Do you want to start a new game? (Y/N)");
@@ -51,7 +51,7 @@ public class Baboy {
                         CompTurn();
                         break;
                     }
-
+            
                     System.out.println("Keep going? (Y/N)");
                     input = pog.nextLine();
 
@@ -89,7 +89,7 @@ public class Baboy {
         CompTotal = 0;
         CompScores = 0;
     }
-
+//COMPUTER
     private static void CompTurn() throws InterruptedException {
         String[] yesno = { "Y", "N" };
         ComputerMove = yesno[new Random().nextInt(yesno.length)];
