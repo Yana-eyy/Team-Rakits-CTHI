@@ -148,7 +148,7 @@ public class Baboy {
                 break;
             }
             if (CompTotal >= 30) {
-                System.out.println("Computer won!");
+                System.out.println("Computer woon!");
                 break;
             }
         } while (ComputerMove.equalsIgnoreCase("Y"));
