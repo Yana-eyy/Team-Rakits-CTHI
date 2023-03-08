@@ -116,7 +116,7 @@ public class Baboy {
     private static void CompTurn() throws InterruptedException {
         String[] yesno = { "Y", "N" };
         ComputerMove = yesno[new Random().nextInt(yesno.length)];
-        System.out.println("-------COMPUTER'S TURN------");
+        System.out.println("------COMPUTER'S TURN------");
 
         do {
             TimeUnit.SECONDS.sleep(2);
