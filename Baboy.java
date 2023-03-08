@@ -1,4 +1,3 @@
-
 /**
  * @author: Winona Una Gamba, Alyana Soriano, Cameron Jay Carpo and Julian Mark Labo
  * Section: ICT - DECISIVE (CTHI)
@@ -8,7 +7,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import org.omg.CORBA.TIMEOUT;
+
 
 public class Baboy {
     private static String input = "";
@@ -62,7 +61,8 @@ public class Baboy {
                 input = pog.nextLine();
                 if (input.equalsIgnoreCase("Y")) {
                     playerTotal = playerScores += dice;
-                    if (playerTotal >= 30) {
+                    if (playerTotal >= 100) {
+                    	System.out.println("Turn ended. You earned " + playerTotal + " points.");
                         System.out.println("You won!");
                         NewGame();
                         break;
@@ -70,7 +70,8 @@ public class Baboy {
                 } else if (input.equalsIgnoreCase("N")) {
                     playerTotal = playerScores += dice;
                     System.out.println("Turn ended. You earned " + playerTotal + " points.");
-                    if (playerTotal >= 30) {
+                    if (playerTotal >= 100) {
+                    	System.out.println("Turn ended. You earned " + playerTotal + " points.");
                         System.out.println("You won!");
                         NewGame();
                         break;
@@ -86,7 +87,8 @@ public class Baboy {
 
             if (input.equalsIgnoreCase("N")) {
                 System.out.println("Turn ended. You earned " + playerTotal + " points.");
-                if (playerTotal >= 30) {
+                if (playerTotal >= 100) {
+                	System.out.println("Turn ended. You earned " + playerTotal + " points.");
                     System.out.println("You won!");
                     NewGame();
                     break;
@@ -131,7 +133,8 @@ public class Baboy {
             System.out.println(ComputerMove);
             if (ComputerMove.equalsIgnoreCase("Y")) {
                 CompTotal = CompScores += dice;
-                if (CompTotal >= 30) {
+                if (CompTotal >= 100) {
+                	System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
                     System.out.println("Computer won!");
                     NewGame();
                     break;
@@ -139,7 +142,8 @@ public class Baboy {
             } else if (ComputerMove.equalsIgnoreCase("N")) {
                 CompTotal = CompScores += dice;
                 System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
-                if (CompTotal >= 30) {
+                if (CompTotal >= 100) {
+                	System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
                     System.out.println("Computer won!");
                     NewGame();
                     break;
@@ -147,7 +151,8 @@ public class Baboy {
                 PlayerTurn();
                 break;
             }
-            if (CompTotal >= 30) {
+            if (CompTotal >= 100) {
+            	System.out.println("Turn ended. Computer earned " + CompTotal + " points.");
                 System.out.println("Computer won!");
                 break;
             }
