@@ -47,7 +47,7 @@ public class Baboy {
     public static void PlayerTurn() throws InterruptedException {
         while (true) {
 
-            System.out.println("------YOUR TURN-----");
+            System.out.println("-----YOUR TURN-----");
             do {
                 dice = ran.nextInt(6) + 1;
                 System.out.println("The die rolled: " + dice);
